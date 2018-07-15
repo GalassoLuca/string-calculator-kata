@@ -1,3 +1,5 @@
 module.exports = class Calculator {
-    static add () {}
+    static add () {
+        return 0
+    }
 }
