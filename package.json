@@ -1,0 +1,27 @@
+{
+  "name": "string-calculator-kata",
+  "version": "1.0.0",
+  "description": "My solution of string-calculator-kata",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalassoLuca/string-calculator-kata.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Node",
+    "Kata"
+  ],
+  "author": "Luca Galasso",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/GalassoLuca/string-calculator-kata/issues"
+  },
+  "homepage": "https://github.com/GalassoLuca/string-calculator-kata#readme"
+}
