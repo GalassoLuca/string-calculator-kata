@@ -23,13 +23,6 @@ describe('Calculator tests', () => {
         expect(result).to.equal(12)
     })
 
-    it('Two numbers should sum each other', () => {
-        const twoNumbersSeparatedWithComma = "1,2"
-        const result = Calculator.add(twoNumbersSeparatedWithComma)
-
-        expect(result).to.equal(3)
-    })
-
     it('The function should sum 3 numbers separated with comma', () => {
         const threeNumbersSeparatedWithComma = "1,2,3"
         const result = Calculator.add(threeNumbersSeparatedWithComma)
@@ -50,35 +43,22 @@ describe('Calculator tests', () => {
         expect(() => { Calculator.add(stringWithUndefinedDelimiter) }).throw(/undefined delimiter/)
     })
 
-    it('Should accept different delimiter', () => {
-        const singleLineWithDifferentDelimiter = "//;\n1;2"
-        const result = Calculator.add(singleLineWithDifferentDelimiter)
-
-        expect(result).to.equal(3)
-    })
-
-    it('Should accept different delimiter on multi line', () => {
+    it('Should accept a different delimiter on the first line', () => {
         const twoLineWithDifferentDelimiter = "//;\n1;2\n3"
         const result = Calculator.add(twoLineWithDifferentDelimiter)
 
         expect(result).to.equal(6)
     })
 
-    it('Should throw an error if negative number is given', () => {
-        const unexpectedNegativeNumber = "1,4,-1"
-
-        expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -1/)
-    })
-
     it('Should throw an error followed by all negative numbers if negative numbers are given', () => {
-        const unexpectedNegativeNumber = "//;\n1;-2\n3;-5"
+        const unexpectedNegativeNumber = "//;\n1;-2;3;-5"
 
         expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -2 -5/)
     })
 
     it('Numbers bigger than 1000 should be ignored', () => {
-        const lineWithNegativeNumber = '2,1001'
-        const result = Calculator.add(lineWithNegativeNumber)
+        const lineWithHugeNumber = '2,1001'
+        const result = Calculator.add(lineWithHugeNumber)
 
         expect(result).to.equal(2)
     })
