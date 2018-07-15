@@ -23,4 +23,11 @@ describe('Calculator tests', () => {
 
         expect(result).to.equal(12)
     })
+
+    it('Two number should be sum each other', () => {
+        const number = "1,2"
+        const result = Calculator.add(number)
+
+        expect(result).to.equal(3)
+    })
 })
