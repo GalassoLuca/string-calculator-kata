@@ -13,8 +13,7 @@ describe('Calculator tests', () => {
     it('A number should throw an error', () => {
         const number = 12
 
-        // expect(result).to.equal(12)
-        expect((number) => { Calculator.add(number) }).throw(/not a string/)
+        expect(() => { Calculator.add(number) }).to.throw(/not a string/)
     })
 
     it('A string number should return the given number', () => {
@@ -45,6 +44,12 @@ describe('Calculator tests', () => {
         expect(result).to.equal(6)
     })
 
+    it('Should generate error if different delimiter is expected but it is not present', () => {
+        const stringWithUndefinedDelimiter = "//\n1;2"
+
+        expect(() => { Calculator.add(stringWithUndefinedDelimiter) }).throw(/undefined delimiter/)
+    })
+
     it('Should accept different delimiter', () => {
         const singleLineWithDifferentDelimiter = "//;\n1;2"
         const result = Calculator.add(singleLineWithDifferentDelimiter)
@@ -53,8 +58,8 @@ describe('Calculator tests', () => {
     })
 
     it('Should accept different delimiter on multi line', () => {
-        const singleLineWithDifferentDelimiter = "//;\n1;2\n3"
-        const result = Calculator.add(singleLineWithDifferentDelimiter)
+        const twoLineWithDifferentDelimiter = "//;\n1;2\n3"
+        const result = Calculator.add(twoLineWithDifferentDelimiter)
 
         expect(result).to.equal(6)
     })
