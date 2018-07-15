@@ -1,4 +1,4 @@
-const {expect} = require('chai')
+const { expect } = require('chai')
 const Calculator = require('../src/Calculator')
 
 
@@ -10,12 +10,12 @@ describe('Calculator tests', () => {
         expect(result).to.equal(0)
     })
 
-    // it('A single number should return the given number', () => {
-    //     const number = 12
-    //     const result = Calculator.add(number)
+    it('A number should throw an error', () => {
+        const number = 12
 
-    //     expect(result).to.equal(12)
-    // })
+        // expect(result).to.equal(12)
+        expect((number) => { Calculator.add(number) }).throw(/not a string/)
+    })
 
     it('A string number should return the given number', () => {
         const stringNumber = "12"
