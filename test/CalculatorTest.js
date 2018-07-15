@@ -37,4 +37,11 @@ describe('Calculator tests', () => {
 
         expect(result).to.equal(6)
     })
+
+    it('Should sum two lines of numbers separated with \\n', () => {
+        const twoLinesOfNumbersSeparatedWithComma = "1\n2,3"
+        const result = Calculator.add(twoLinesOfNumbersSeparatedWithComma)
+
+        expect(result).to.equal(2)
+    })
 })
