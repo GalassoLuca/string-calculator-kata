@@ -64,7 +64,7 @@ describe('Calculator tests', () => {
         expect(result).to.equal(6)
     })
 
-    it('Should accept different delimiter on multi line', () => {
+    it('Should throw an error if negative number is given', () => {
         const unexpectedNegativeNumber = "1,4,-1"
 
         expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -1/)
