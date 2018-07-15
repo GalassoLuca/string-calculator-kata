@@ -21,7 +21,7 @@ module.exports = class Calculator {
                     const number = Number(numberAsString)
                     if (number < 0)
                         negativeNumbers.push(number)
-                    else
+                    else if(number <= 1000)
                         numbers.push(number)
                 })
         }, 0)
