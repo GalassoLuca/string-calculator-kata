@@ -1,7 +1,7 @@
 module.exports = class Calculator {
-    static add (string) {
+    static add(string) {
         if (string)
-            return string
+            return Number(string)
         else
             return 0
     }
