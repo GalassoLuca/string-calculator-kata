@@ -51,4 +51,11 @@ describe('Calculator tests', () => {
 
         expect(result).to.equal(3)
     })
+
+    it('Should accept different delimiter on multi line', () => {
+        const singleLineWithDifferentDelimiter = "//;\n1;2\n3"
+        const result = Calculator.add(singleLineWithDifferentDelimiter)
+
+        expect(result).to.equal(6)
+    })
 })
