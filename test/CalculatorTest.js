@@ -10,12 +10,12 @@ describe('Calculator tests', () => {
         expect(result).to.equal(0)
     })
 
-    it('A single number should return the given number', () => {
-        const number = 12
-        const result = Calculator.add(number)
+    // it('A single number should return the given number', () => {
+    //     const number = 12
+    //     const result = Calculator.add(number)
 
-        expect(result).to.equal(12)
-    })
+    //     expect(result).to.equal(12)
+    // })
 
     it('A string number should return the given number', () => {
         const stringNumber = "12"
@@ -24,10 +24,17 @@ describe('Calculator tests', () => {
         expect(result).to.equal(12)
     })
 
-    it('Two numbers should be sum each other', () => {
+    it('Two numbers should sum each other', () => {
         const twoNumbersSeparatedWithComma = "1,2"
         const result = Calculator.add(twoNumbersSeparatedWithComma)
 
         expect(result).to.equal(3)
+    })
+
+    it('The function should sum 3 numbers separated with comma', () => {
+        const threeNumbersSeparatedWithComma = "1,2,3"
+        const result = Calculator.add(threeNumbersSeparatedWithComma)
+
+        expect(result).to.equal(6)
     })
 })
