@@ -49,6 +49,6 @@ describe('Calculator tests', () => {
         const singleLineWithDifferentDelimiter = "//;\n1;2"
         const result = Calculator.add(singleLineWithDifferentDelimiter)
 
-        expect(result).to.equal(6)
+        expect(result).to.equal(3)
     })
 })
