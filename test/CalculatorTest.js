@@ -44,4 +44,11 @@ describe('Calculator tests', () => {
 
         expect(result).to.equal(6)
     })
+
+    it('Should accept different delimiter', () => {
+        const singleLineWithDifferentDelimiter = "//;\n1;2"
+        const result = Calculator.add(singleLineWithDifferentDelimiter)
+
+        expect(result).to.equal(6)
+    })
 })
