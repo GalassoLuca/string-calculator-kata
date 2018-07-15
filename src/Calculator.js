@@ -5,13 +5,13 @@ module.exports = class Calculator {
 
         const lines = string.split('\n')
 
-        const sum = lines.reduce((acc, line) => {
+        const globalSum = lines.reduce((globalAcc, line) => {
             const lineSum = line.split(',')
                 .map(numberAsString => Number(numberAsString))
-                .reduce((localAcc, number) => localAcc + number, 0)
-            return acc + lineSum
+                .reduce((lineAcc, number) => lineAcc + number, 0)
+            return globalAcc + lineSum
         }, 0)
 
-        return sum
+        return globalSum
     }
 }
