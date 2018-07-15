@@ -1,5 +1,8 @@
 module.exports = class Calculator {
-    static add () {
-        return 0
+    static add (string) {
+        if (string)
+            return string
+        else
+            return 0
     }
 }
