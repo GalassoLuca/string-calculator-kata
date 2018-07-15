@@ -42,6 +42,6 @@ describe('Calculator tests', () => {
         const twoLinesOfNumbersSeparatedWithComma = "1\n2,3"
         const result = Calculator.add(twoLinesOfNumbersSeparatedWithComma)
 
-        expect(result).to.equal(2)
+        expect(result).to.equal(6)
     })
 })
