@@ -69,4 +69,10 @@ describe('Calculator tests', () => {
 
         expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -1/)
     })
+
+    it('Should throw an error followed by all negative numbers if negative numbers are given', () => {
+        const unexpectedNegativeNumber = "//;\n1;-2\n3;-5"
+
+        expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -2 -5/)
+    })
 })
