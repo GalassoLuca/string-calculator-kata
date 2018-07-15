@@ -75,4 +75,11 @@ describe('Calculator tests', () => {
 
         expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -2 -5/)
     })
+
+    it('Numbers bigger than 1000 should be ignored', () => {
+        const lineWithNegativeNumber = '2,1001'
+        const result = Calculator.add(lineWithNegativeNumber)
+
+        expect(result).to.equal(2)
+    })
 })
