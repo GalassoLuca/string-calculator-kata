@@ -10,8 +10,15 @@ describe('Calculator tests', () => {
         expect(result).to.equal(0)
     })
 
-    it('For a single number should be return the given number', () => {
+    it('For a single number should return the given number', () => {
         const number = 12
+        const result = Calculator.add(number)
+
+        expect(result).to.equal(12)
+    })
+
+    it('For a single string number should be return the given number', () => {
+        const number = "12"
         const result = Calculator.add(number)
 
         expect(result).to.equal(12)
