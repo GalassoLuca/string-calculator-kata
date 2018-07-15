@@ -18,15 +18,15 @@ describe('Calculator tests', () => {
     })
 
     it('A string number should return the given number', () => {
-        const number = "12"
-        const result = Calculator.add(number)
+        const stringNumber = "12"
+        const result = Calculator.add(stringNumber)
 
         expect(result).to.equal(12)
     })
 
-    it('Two number should be sum each other', () => {
-        const number = "1,2"
-        const result = Calculator.add(number)
+    it('Two numbers should be sum each other', () => {
+        const twoNumbersSeparatedWithComma = "1,2"
+        const result = Calculator.add(twoNumbersSeparatedWithComma)
 
         expect(result).to.equal(3)
     })
