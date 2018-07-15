@@ -14,7 +14,12 @@ module.exports = class Calculator {
 
         const globalSum = lines.reduce((globalAcc, line) => {
             const lineSum = line.split(delimiter)
-                .map(numberAsString => Number(numberAsString))
+                .map(numberAsString => {
+                    const number = Number(numberAsString)
+                    if(number < 0)
+                        throw Error('negatives not allowed: -1')
+                    return number
+                })
                 .reduce((lineAcc, number) => lineAcc + number, 0)
             return globalAcc + lineSum
         }, 0)
