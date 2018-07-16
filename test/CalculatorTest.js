@@ -23,7 +23,7 @@ describe('Calculator tests', () => {
         expect(result).to.equal(12)
     })
 
-    it('The function should sum 3 numbers separated with comma', () => {
+    it('Should sum 3 numbers separated with comma', () => {
         const threeNumbersSeparatedWithComma = "1,2,3"
         const result = Calculator.add(threeNumbersSeparatedWithComma)
 
@@ -43,7 +43,7 @@ describe('Calculator tests', () => {
         expect(() => { Calculator.add(stringWithUndefinedDelimiter) }).throw(/undefined delimiter/)
     })
 
-    it('Should accept a different delimiter on the first line', () => {
+    it('Should accept a different delimiter stored at the first line if it starts with //', () => {
         const twoLineWithDifferentDelimiter = "//;\n1;2\n3"
         const result = Calculator.add(twoLineWithDifferentDelimiter)
 
@@ -51,9 +51,9 @@ describe('Calculator tests', () => {
     })
 
     it('Should throw an error followed by all negative numbers if negative numbers are given', () => {
-        const unexpectedNegativeNumber = "//;\n1;-2;3;-5"
+        const unexpectedNegativeNumbers = "1,-2,3,-5"
 
-        expect(() => { Calculator.add(unexpectedNegativeNumber) }).throw(/negatives not allowed: -2 -5/)
+        expect(() => { Calculator.add(unexpectedNegativeNumbers) }).throw(/negatives not allowed: -2 -5/)
     })
 
     it('Numbers bigger than 1000 should be ignored', () => {
